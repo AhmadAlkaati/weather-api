@@ -1,0 +1,46 @@
+@media (max-width: 500px) {
+  main {
+    .container {
+      header {
+        h1 {
+          font-size: 25px;
+        }
+      }
+
+      .output {
+        .info {
+          .return {
+            left: 1rem;
+            i {
+              font-size: 30px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  main {
+    .container {
+      header {
+        h1 {
+          font-size: 23px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 350px) {
+  main {
+    .container {
+      header {
+        h1 {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
