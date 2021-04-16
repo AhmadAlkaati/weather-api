@@ -1,3 +1,15 @@
+@media (max-width: 800px) {
+  footer a {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 700px) {
+  footer a {
+    font-size: 8px;
+  }
+}
+
 @media (max-width: 500px) {
   main .container header h1 {
     font-size: 25px;
