@@ -82,13 +82,15 @@ function displayResults(weather) {
   const humidityElem = document.querySelector('.humidity');
   const weatherImg = document.querySelector('.weather-img');
   const sentence = document.querySelector('.sentence');
+  const weatherDescription = weather.weather[0].description;
+  const currentDate = new Date();
   cityElement.innerHTML = `${weather.name} , ${weather.sys.country}`;
   tempElement.innerHTML = `${weather.main.temp} °C`;
   maxTemp.innerHTML = `Max Temp: ${weather.main.temp_max} °C`;
   minTemp.innerHTML = ` Min Temp: ${weather.main.temp_min} °C`;
   feelsLikeElement.innerHTML = `Feels like   ${weather.main.feels_like} °C`;
   windElem.innerHTML = `Wind: ${weather.wind.speed} km/h`;
-  const currentDate = new Date();
+
   dateElem.innerHTML = ` ${
     weekDays[currentDate.getDay()]
   }   ${currentDate.getDate()} ${
@@ -98,22 +100,24 @@ function displayResults(weather) {
   humidityElem.innerHTML = ` Humidity: ${weather.main.humidity}%`;
 
   if (
-    weather.weather[0].description == 'broken clouds' ||
-    weather.weather[0].description == 'clouds' ||
-    weather.weather[0].description == 'cloudy'
+    weatherDescription == 'broken clouds' ||
+    weatherDescription == 'clouds' ||
+    weatherDescription == 'cloudy' ||
+    weatherDescription == 'overcast cloud' ||
+    weatherDescription == 'scattered clouds'
   ) {
     weatherImg.src = './images/cloud.png';
   } else if (
-    weather.weather[0].description == 'clear sky' ||
-    weather.weather[0].description == 'clear' ||
-    weather.weather[0].description == 'sunny'
+    weatherDescription == 'clear sky' ||
+    weatherDescription == 'clear' ||
+    weatherDescription == 'sunny'
   ) {
     weatherImg.src = './images/sunny.png';
   } else if (
-    weather.weather[0].description == 'rainy' ||
-    weather.weather[0].description == 'rain' ||
-    weather.weather[0].description == 'heavy rain' ||
-    weather.weather[0].description == 'light rain'
+    weatherDescription == 'rainy' ||
+    weatherDescription == 'rain' ||
+    weatherDescription == 'heavy rain' ||
+    weatherDescription == 'light rain'
   ) {
     weatherImg.src = './images/rain.svg';
     sentence.innerHTML = "Don't forget your umbrella.";
